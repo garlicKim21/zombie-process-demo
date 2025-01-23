@@ -8,7 +8,7 @@ import (
 )
 
 func GetProcesses() ([]types.Process, error) {
-	cmd := exec.Command("ps", "-e", "-o", "pid,status")
+	cmd := exec.Command("ps", "-e", "-o", "pid,stat")
 	output, err := cmd.Output()
 	if err != nil {
 		return nil, err
