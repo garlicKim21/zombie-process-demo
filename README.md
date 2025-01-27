@@ -23,30 +23,30 @@
 
 ### 일반 실행
 
-\`\`\`
+```
 go build -o main ./cmd/main.go
 ./main
-\`\`\`
+```
 
 ### Docker로 실행 (좀비 프로세스 발생 가능)
 
-\`\`\`
+```
 docker build -f Dockerfile -t zombie-process-demo .
 docker run -p 8080:8080 zombie-process-demo
-\`\`\`
+```
 
 ### Docker + Tini로 실행 (좀비 프로세스 방지)
 
-\`\`\`
+```
 docker build -f Dockerfile_tini -t zombie-process-demo-tini .
 docker run -p 8080:8080 zombie-process-demo-tini
-\`\`\`
+```
 
 ## 좀비 프로세스 테스트
 
 1. 서버 실행
-2. \`curl -X POST http://localhost:8080/api/zombie-process\`로 좀비 프로세스 생성
-3. \`curl http://localhost:8080/api/processes\`로 프로세스 목록 확인
+2. `curl -X POST http://localhost:8080/api/zombie-process`로 좀비 프로세스 생성
+3. `curl http://localhost:8080/api/processes`로 프로세스 목록 확인
 
 ## Docker 환경에서의 좀비 프로세스 관리
 
