@@ -42,26 +42,6 @@ docker build -f Dockerfile_tini -t zombie-process-demo-tini .
 docker run -p 8080:8080 zombie-process-demo-tini
 \`\`\`
 
-## 프로젝트 구조
-
-\`\`\`
-.
-├── cmd/
-│   └── main.go
-├── internal/
-│   ├── api/
-│   │   ├── handler.go
-│   │   └── router.go
-│   ├── process/
-│   │   ├── manager.go
-│   │   └── monitor.go
-│   └── type/
-│       └── process.go
-├── Dockerfile
-├── Dockerfile_tini
-└── README.md
-\`\`\`
-
 ## 좀비 프로세스 테스트
 
 1. 서버 실행
